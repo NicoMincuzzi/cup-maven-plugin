@@ -3,17 +3,31 @@ package cup.plugin;
 import java.io.IOException;
 
 public class Generator {
-    public void cupGenerate(String dir, String cupPath) throws IOException, InterruptedException {
+
+    private final String dir;
+
+    public Generator() {
+        dir = System.getProperty("user.dir");
+    }
+
+    public void cupGenerate(String cupPath) throws IOException, InterruptedException {
         cupPath = dir + "/" + cupPath;
 
-        String m2Path = "/Users/nicola/.m2/repository";
-        String javaCupPath = "/edu/princeton/cup/java-cup/10k/";
-        String path = m2Path + javaCupPath;
+        String path = dependencyPath();
 
-        String result = "java -jar " + path + "cup-0.10k.jar " + cupPath + "/" + "Expr.cup";
+        //TODO Retrieve .cup file and verify that is unique
+        String cupFile = "Expr.cup";
 
-        Process process = Runtime.getRuntime().exec(result);
+        String command = "java -jar " + path + "cup-0.10k.jar " + cupPath + "/" + cupFile;
+
+        Process process = Runtime.getRuntime().exec(command);
         process.waitFor();
+    }
+
+    private String dependencyPath() {
+        String m2RepositoryPath = "$HOME/.m2/repository";
+        String javaCupPath = "/edu/princeton/cup/java-cup/10k/";
+        return m2RepositoryPath + javaCupPath;
     }
 }
 

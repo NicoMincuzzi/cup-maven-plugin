@@ -21,30 +21,30 @@ public class CupMojo extends AbstractMojo {
     @Parameter(defaultValue = "${project}", required = true, readonly = true)
     MavenProject project;
 
-    private final String dir;
-
     private final Generator generator;
+
+    private final GeneratedFile generatedFile;
 
     public CupMojo() {
         generator = new Generator();
-        dir = System.getProperty("user.dir");
+        generatedFile = new GeneratedFile();
     }
 
     public void execute() {
-
         try {
             getLog().debug("Execute Cup parser");
-            String output = dir + "/" + "src/main/java/" + outputDirectory + "/";
-            generator.cupGenerate(dir, cupDefinition);
+            String output = "/" + "src/main/java/" + outputDirectory + "/";
+            generator.cupGenerate(cupDefinition);
+            getLog().debug("End Cup parser");
 
-            Utils.moveGeneratedFile(output, "parser.java");
-            Utils.moveGeneratedFile(output, "sym.java");
+            generatedFile.move(output, "parser.java");
+            generatedFile.move(output, "sym.java");
+            getLog().debug("Generated files correctly move.");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     }
 
 }
