@@ -1,31 +1,32 @@
 package cup.plugin;
 
+import cup.plugin.exception.MoreFileException;
+
 import java.io.IOException;
 
 public class Generator {
 
     private final String dir;
+    private final CupFile cupFile;
 
     public Generator() {
         dir = System.getProperty("user.dir");
+        cupFile = new CupFile();
     }
 
-    public void cupGenerate(String cupPath) throws IOException, InterruptedException {
+    public void cupGenerate(String cupPath) throws IOException, InterruptedException, MoreFileException {
         cupPath = dir + "/" + cupPath;
+        String cupFilename = cupFile.retrieve(cupPath);
 
         String path = dependencyPath();
 
-        //TODO Retrieve .cup file and verify that is unique
-        String cupFile = "Expr.cup";
-
-        String command = "java -jar " + path + "cup-0.10k.jar " + cupPath + "/" + cupFile;
-
+        String command = "java -jar " + path + "cup-0.10k.jar " + cupFilename;
         Process process = Runtime.getRuntime().exec(command);
         process.waitFor();
     }
 
     private String dependencyPath() {
-        String m2RepositoryPath = "$HOME/.m2/repository";
+        String m2RepositoryPath = System.getenv("HOME") + "/.m2/repository";
         String javaCupPath = "/edu/princeton/cup/java-cup/10k/";
         return m2RepositoryPath + javaCupPath;
     }

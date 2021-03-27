@@ -1,5 +1,6 @@
 package cup.plugin;
 
+import cup.plugin.exception.MoreFileException;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
@@ -43,6 +44,8 @@ public class CupMojo extends AbstractMojo {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (MoreFileException e) {
             e.printStackTrace();
         }
     }

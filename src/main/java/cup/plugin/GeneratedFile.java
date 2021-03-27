@@ -14,7 +14,7 @@ public class GeneratedFile {
     }
 
     public void move(String target, String filename) throws IOException {
-        Path fileToMovePath = Paths.get(filename);
+        Path fileToMovePath = Paths.get(projectCurrentDirectory+"/" + filename);
         Path targetPath = Paths.get(projectCurrentDirectory + target + filename);
         Files.move(fileToMovePath, targetPath);
     }
