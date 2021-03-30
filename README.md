@@ -2,7 +2,7 @@
 
 ![PyPI - Python Version](https://img.shields.io/badge/java-1.8-red) [![Version](https://img.shields.io/badge/version-v0.1.0-green)](https://github.com/NicoMincuzzi/cup-maven-plugin) ![GitHub repo size](https://img.shields.io/github/repo-size/NicoMincuzzi/cup-maven-plugin)
 
-[CUP](https://www.cs.princeton.edu/~appel/modern/java/CUP/)
+CUP Maven Plugin for [CUP Parser Generator](https://www.cs.princeton.edu/~appel/modern/java/CUP/). It is optimize for `CUP v0.10` and allow to generate `parser.java` and `sym.java` files by any `*.cup` file.
 
 ## Prerequisites
 
