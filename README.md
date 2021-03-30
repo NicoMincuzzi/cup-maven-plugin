@@ -6,7 +6,7 @@ CUP Maven Plugin for [CUP Parser Generator](https://www.cs.princeton.edu/~appel/
 
 ## Prerequisites
 
-The run-time library version of Java CUP library must correspond to version which the plug-in is using for parser generation.
+The run-time library version of Java CUP library must correspond to version `CUP v0.10`.
 
 In order to use it, you must add a dependency to your `pom.xml`:
 
