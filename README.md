@@ -1,10 +1,12 @@
 # CUP Maven Plugin
+[![build](https://github.com/NicoMincuzzi/cup-maven-plugin/actions/workflows/maven.yml/badge.svg)](https://github.com/NicoMincuzzi/cup-maven-plugin/actions/workflows/maven.yml)
+![PyPI - Python Version](https://img.shields.io/badge/java-1.8-red) [![Version](https://img.shields.io/badge/version-v0.1.0-green)](https://github.com/NicoMincuzzi/cup-maven-plugin) ![GitHub repo size](https://img.shields.io/github/repo-size/NicoMincuzzi/cup-maven-plugin)
 
-[CUP](https://www.cs.princeton.edu/~appel/modern/java/CUP/)
+CUP Maven Plugin for [CUP Parser Generator](https://www.cs.princeton.edu/~appel/modern/java/CUP/). It is optimize for `CUP v0.10` and allow to generate `parser.java` and `sym.java` files by any `*.cup` file.
 
 ## Prerequisites
 
-The run-time library version of Java CUP library must correspond to version which the plug-in is using for parser generation.
+The run-time library version of Java CUP library must correspond to version `CUP v0.10`.
 
 In order to use it, you must add a dependency to your `pom.xml`:
 
