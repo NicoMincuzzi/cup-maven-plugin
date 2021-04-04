@@ -23,7 +23,7 @@ To use this plugin, you will have to tell Maven to execute the plugin at some po
 
 ``` xml
 <plugin>
-    <groupId>com.nmincuzzi</groupId>
+    <groupId>com.github.nicomincuzzi</groupId>
     <artifactId>cup-maven-plugin</artifactId>
     <version>0.1.0</version>
     <executions>
