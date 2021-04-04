@@ -8,10 +8,12 @@ public class Generator {
 
     private final String dir;
     private final CupFile cupFile;
+    private final CommandAdapter commandAdapter;
 
-    public Generator() {
+    public Generator(CupFile cupFile, CommandAdapter commandAdapter) {
         dir = System.getProperty("user.dir");
-        cupFile = new CupFile();
+        this.cupFile = cupFile;
+        this.commandAdapter = commandAdapter;
     }
 
     public void cupGenerate(String cupPath) throws IOException, InterruptedException, MoreFileException {
@@ -21,8 +23,7 @@ public class Generator {
         String path = dependencyPath();
 
         String command = "java -jar " + path + "cup-0.10k.jar " + cupFilename;
-        Process process = Runtime.getRuntime().exec(command);
-        process.waitFor();
+        commandAdapter.exec(command);
     }
 
     private String dependencyPath() {

@@ -23,11 +23,10 @@ public class CupMojo extends AbstractMojo {
     MavenProject project;
 
     private final Generator generator;
-
     private final GeneratedFile generatedFile;
 
     public CupMojo() {
-        generator = new Generator();
+        generator = new Generator(new CupFile(), new CommandAdapter());
         generatedFile = new GeneratedFile();
     }
 
