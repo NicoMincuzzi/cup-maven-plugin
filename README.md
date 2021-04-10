@@ -39,3 +39,9 @@ To use this plugin, you will have to tell Maven to execute the plugin at some po
     </configuration>
 </plugin>
 ```
+
+## How to Contribute
+Make a pull request...
+
+## License
+Distributed under Apache-2.0 License, please see license file within the code for more details.
