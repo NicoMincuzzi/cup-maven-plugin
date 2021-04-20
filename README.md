@@ -1,6 +1,7 @@
 # CUP Maven Plugin
 [![build](https://github.com/NicoMincuzzi/cup-maven-plugin/actions/workflows/maven.yml/badge.svg)](https://github.com/NicoMincuzzi/cup-maven-plugin/actions/workflows/maven.yml)
-![PyPI - Python Version](https://img.shields.io/badge/java-1.8-red) [![Version](https://img.shields.io/badge/version-v0.1.0-green)](https://github.com/NicoMincuzzi/cup-maven-plugin) ![GitHub repo size](https://img.shields.io/github/repo-size/NicoMincuzzi/cup-maven-plugin)
+[![codecov](https://codecov.io/gh/NicoMincuzzi/cup-maven-plugin/branch/main/graph/badge.svg?token=NDRAZKWIEK)](https://codecov.io/gh/NicoMincuzzi/cup-maven-plugin)
+![Java Version](https://img.shields.io/badge/java-1.8-red) [![Version](https://img.shields.io/badge/version-v0.1.0-green)](https://github.com/NicoMincuzzi/cup-maven-plugin) ![GitHub repo size](https://img.shields.io/github/repo-size/NicoMincuzzi/cup-maven-plugin)
 
 CUP Maven Plugin for [CUP Parser Generator](https://www.cs.princeton.edu/~appel/modern/java/CUP/). It is optimize for `CUP v0.10` and allow to generate `parser.java` and `sym.java` files by any `*.cup` file.
 
