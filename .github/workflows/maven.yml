@@ -25,4 +25,7 @@ jobs:
     - name: Tests
       run: mvn test
     - name: Upload coverage to Codecov
-      run: mvn cobertura:cobertura
+      run: |
+        mvn cobertura:cobertura
+        bash <(curl -s https://codecov.io/bash)
+      
